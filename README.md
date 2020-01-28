@@ -5,6 +5,7 @@ If you're a lazy snob like me and doesnt wanna go through the hassle of manually
 # Finding the ID
 
 To search for stickers by name, try [LINE Store](https://store.line.me/home/).  The sticker ID is the batch of numbers in the URL.
+![](images/stickerID.png)
 
 # Using the Program using python directly
 
