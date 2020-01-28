@@ -1,6 +1,6 @@
 # Line sticker downloader
 
-If ya be a lazy snob like me and aint gonna through the hassle of manually downloading Line stickers or waiting for someone to update them python script, just tell what to add and i'll try. I've added @2x sticker download and caption stickers download option in this and will soon add more if i can get ideas. And for any of you who use stickers on phone with gboard, you could use [An app that imports pics from your desired folder into gboard to use as stickers](https://play.google.com/store/apps/details?id=com.crossbowffs.usticker&hl=en).
+If ya be a lazy snob like me and aint gonna through the hassle of manually downloading Line stickers or waiting for someone to update them python script. I've added @2x sticker download and caption stickers download option in this and will soon add more if i can get ideas. And for any of you who use stickers on phone with gboard, you could use [An app that imports pics from your desired folder into gboard to use as stickers](https://play.google.com/store/apps/details?id=com.crossbowffs.usticker&hl=en).
 
 # Finding the ID
 
