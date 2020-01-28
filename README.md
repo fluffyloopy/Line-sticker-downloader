@@ -35,6 +35,8 @@ c: caption stickers without caption mark(****).
 
 gif: animated stickers only.
 
+popup: popup stickers only.
+
 both: both static and animated stickers will be downloaded.
 
 Anything else: exit the program without downloading.
@@ -42,18 +44,10 @@ Anything else: exit the program without downloading.
 
 # TODO
 
-Next release: support animated "popup" stickers. Script only downloads static versions for now.
+- [x] Next release: support animated "popup" stickers. Script only downloads static versions for now.
 
-Allow program to take input from a text file for batch downloading.
+- [ ] Allow program to take input from a text file for batch downloading. (not gonna bother tbh, until someone actually needs. and idk how to implement to this code cuz of how its written, gonna be harder than usual)
 
-Add a GUI to make program less offensive looking.
+- [ ] Add a GUI to make program less offensive looking.
 
-Allow inline previewing of image?
-
-Line store seems to have .apng files, an uncommon format. Should add option for that.
-
-Unlikely, but on the wishlist: inline search of sticker packs, removing need to separately go on other sites to find ID; database for sticker descriptions? Also figure out how sound stickers are implemented.
-
-
-
-DISCLAIMER: I take no responsibility for what users do with this program.
+- [ ] Line store seems to have .apng files, an uncommon format. Should add option for that. (soon... if anyone asks me to do that)
