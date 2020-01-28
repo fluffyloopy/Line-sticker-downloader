@@ -35,9 +35,9 @@ def main():
             if sys.version_info[0] < 3:
                 # https://stackoverflow.com/questions/31722883/python-nameerror-name-hello-is-not-defined
                 # compatibility python v2
-                pack_ext = raw_input("\nOnly static stickers available! \ny to download sticker as is on the store or c to download caption stickers without the "****" on them, anything else to exit: ")
+                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store or c to download caption stickers without the "****" on them(c doesnt work on non caption stickers), anything else to exit: ")
             else:
-                pack_ext = input("\nOnly static stickers available! \ny to download sticker as is on the store or c to download caption stickers without the "****" on them, anything else to exit: ")
+                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store or c to download caption stickers without the "****" on them(c doesnt work on non caption stickers), anything else to exit: ")
 
 
     id_string = """"id":"""
@@ -52,7 +52,7 @@ def main():
     list_ids.pop()  # [4] Why pop
 
     # [3] A less ugly way of checking menu values
-    menu = {'apng': (get_gif,), 'png': (get_png,), 'y': (get_png,), 'c': (get_base_png), 'both': (get_gif, get_png)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
+    menu = {'apng': (get_gif,), 'png': (get_png,), 'c': (get_base_png,), 'both': (get_gif, get_png)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
     if pack_ext in menu:
         for choice in menu[pack_ext]:
             choice(pack_id, list_ids, pack_name)
