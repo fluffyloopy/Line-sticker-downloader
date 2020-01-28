@@ -31,8 +31,6 @@ You will be notified whether animated stickers are available, and prompted for y
 # Download options
 png: static stickers only.
 
-y: static stickers only.
-
 c: caption stickers without caption mark(****).
 
 gif: animated stickers only.
