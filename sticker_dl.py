@@ -35,9 +35,9 @@ def main():
             if sys.version_info[0] < 3:
                 # https://stackoverflow.com/questions/31722883/python-nameerror-name-hello-is-not-defined
                 # compatibility python v2
-                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store or c to download caption stickers without the "****" on them(c doesnt work on non caption stickers), anything else to exit: ")
+                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the "****" on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), anything else to exit: ")
             else:
-                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store or c to download caption stickers without the "****" on them(c doesnt work on non caption stickers), anything else to exit: ")
+                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the "****" on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), anything else to exit: ")
 
 
     id_string = """"id":"""
@@ -52,7 +52,7 @@ def main():
     list_ids.pop()  # [4] Why pop
 
     # [3] A less ugly way of checking menu values
-    menu = {'apng': (get_gif,), 'png': (get_png,), 'c': (get_base_png,), 'both': (get_gif, get_png)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
+    menu = {'apng': (get_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,), 'both': (get_gif, get_png)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
     if pack_ext in menu:
         for choice in menu[pack_ext]:
             choice(pack_id, list_ids, pack_name)
@@ -123,6 +123,17 @@ def get_gif(pack_id, list_ids, pack_name):
                 if chunk:
                     f.write(chunk)
 
+def get_popup(pack_id, list_ids, pack_name):
+    pack_name = validate_savepath(pack_name)
+    for x in list_ids:
+        save_path = os.path.join(str(pack_name), str(x) + '.png')
+        url = 'https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker_popup.png'.format(x)
+        image = requests.get(url, stream = True)
+        print(str(pack_name) + "[*] Downloaded")
+        with open(save_path, 'wb') as f:
+            for chunk in image.iter_content(chunk_size = 10240):
+                if chunk:
+                    f.write(chunk)
 
 def get_png(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
