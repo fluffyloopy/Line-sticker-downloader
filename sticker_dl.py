@@ -126,7 +126,7 @@ def get_gif(pack_id, list_ids, pack_name):
 def get_popup(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
     for x in list_ids:
-        save_path = os.path.join(str(pack_name), str(x) + '.png')
+        save_path = os.path.join(str(pack_name), str(x) + '.apng')
         url = 'https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/android/sticker_popup.png'.format(x)
         image = requests.get(url, stream = True)
         print(str(pack_name) + "[*] Downloaded")
