@@ -30,8 +30,6 @@ You will be notified whether animated stickers are available, and prompted for y
 
 apng files arent supported in many so you'd be better off not using unless it's in web browsers or you could use node-js.
 
-```npm install all-apng2gif``` and add ```os.system(oapng2gif)``` at the end of `sticker_dl.py`.
-
 # Download options
 png: static stickers only.
 
