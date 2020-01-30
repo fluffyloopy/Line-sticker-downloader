@@ -28,7 +28,11 @@ Enter the ID you found from the previous step.
 
 You will be notified whether animated stickers are available, and prompted for your desired download.
 
-animated png files arent supported in many so you'd be better off not using unless it's in web browsers or you could use node-js. Animation png's include animated and popup stickers you download.
+animated png files arent supported in many so you'd be better off not using unless it's in web browsers or you could use node-js. Animation png's include animated and popup stickers you download. 
+
+# Getting animated Gif files
+If you want to get gif versions of apng, install [Node](https://nodejs.org/en/download/) and use the `sticker_dl_new.py`. If you dont want gif and is fine with apng, continue using `sticker_dl.py`. 
+Type `npm install -g all-apng2gif` and once it's done installing, you can start using `sticker_dl_new.py`. This is just a workaround until i find a way to use or make something to convert apng to gifs.
 
 # Download options
 png: static stickers only.
