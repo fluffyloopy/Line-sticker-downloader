@@ -28,7 +28,7 @@ Enter the ID you found from the previous step.
 
 You will be notified whether animated stickers are available, and prompted for your desired download.
 
-apng files arent supported in many so you'd be better off not using unless it's in web browsers or you could use node-js.
+animated png files arent supported in many so you'd be better off not using unless it's in web browsers or you could use node-js. Animation png's include animated and popup stickers you download.
 
 # Download options
 png: static stickers only.
@@ -39,7 +39,9 @@ gif: animated stickers only.
 
 popup: popup stickers only.
 
-both: both static and animated stickers will be downloaded.
+audio: sticker audios only.
+
+both: both audio and animated stickers will be downloaded.
 
 Anything else: exit the program without downloading.
 
@@ -48,7 +50,7 @@ Anything else: exit the program without downloading.
 
 - [x] Next release: support animated "popup" stickers. Script only downloads static versions for now.
 
-- [ ] Allow program to take input from a text file for batch downloading. (not gonna bother tbh, until someone actually needs. and idk how to implement to this code cuz of how its written, gonna be harder than usual)
+- [ ] Mix audio and animated on stickers.
 
 - [ ] Add a GUI to make program less offensive looking.
 
