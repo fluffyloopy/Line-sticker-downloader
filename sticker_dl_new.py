@@ -147,6 +147,7 @@ def get_popup(pack_id, list_ids, pack_name):
             for chunk in image.iter_content(chunk_size = 10240):
                 if chunk:
                     f.write(chunk)
+                    os.system("cd " + str(pack_name) + '&&' + 'oapng2gif')
 
 def get_png(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
