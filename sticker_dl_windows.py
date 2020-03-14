@@ -101,7 +101,7 @@ def apng_to_gif(pack_id, list_ids, pack_name):
     if os.name == "nt":
         os.system('cd ' + str(pack_name) + '&&' + 'for %A IN (*.png) DO ffmpeg -i "%A" "%A.gif"' + '&' + 'del /q "%A"')
     else:
-        os.system('cd ' + str(pack_name) + '&&' + 'for i in *.png; do ffmpeg -i "$i" "$i.gif"' + '&' + 'rm "$i"')
+        os.system('cd ' + str(pack_name) + '&&' + 'for i in *.png; do ffmpeg -i "$i" "${i%.*}.gif"' + '&' + 'rm "$i"')
 
 def get_base_png(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
