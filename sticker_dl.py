@@ -52,7 +52,7 @@ def main():
     list_ids.pop()  # [4] Why pop
 
     # [3] A less ugly way of checking menu values
-    menu = {'apng': (get_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,), 'audio': (get_audio,), 'both': (get_gif, get_audio)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
+    menu = {'apng': (get_gif,apng_to_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,apng_to_gif,), 'audio': (get_audio,), 'both': (get_gif, get_audio)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
     if pack_ext in menu:
         for choice in menu[pack_ext]:
             choice(pack_id, list_ids, pack_name)
@@ -96,6 +96,9 @@ def validate_savepath(pack_name):
         os.makedirs(str(save_name), exist_ok = True)  # exist_ok = True doesn't raise exception if directory exists. Files already in directory are not erased
 
     return save_name
+
+def apng_to_gif(pack_id, list_ids, pack_name):
+    os.system('cd ' + str(pack_name) + '&&' + 'for %A IN (*.png) DO ffmpeg -i "%A" "%A.gif"')
 
 def get_base_png(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
