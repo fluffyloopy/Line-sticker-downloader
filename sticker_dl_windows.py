@@ -27,9 +27,9 @@ def main():
             if sys.version_info[0] < 3:
                 # https://stackoverflow.com/questions/31722883/python-nameerror-name-hello-is-not-defined
                 # compatibility python v2
-                pack_ext = raw_input("\nAnimated stickers available! \nEnter png, apng, audio or both for apng and audio, anything else to exit: ")
+                pack_ext = raw_input("\nAnimated stickers available! \nEnter png, gif, audio or both for apng and audio, anything else to exit: ")
             else:
-                pack_ext = input("\nAnimated stickers available! \nEnter png, apng, audio or both for apng and audio, anything else to exit: ")
+                pack_ext = input("\nAnimated stickers available! \nEnter png, gif, audio or both for apng and audio, anything else to exit: ")
 
         else:
             if sys.version_info[0] < 3:
@@ -52,7 +52,7 @@ def main():
     list_ids.pop()  # [4] Why pop
 
     # [3] A less ugly way of checking menu values
-    menu = {'apng': (get_gif,apng_to_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,apng_to_gif,), 'audio': (get_audio,), 'both': (get_gif, get_audio)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
+    menu = {'gif': (get_gif,apng_to_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,apng_to_gif,), 'audio': (get_audio,), 'both': (get_gif, get_audio)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
     if pack_ext in menu:
         for choice in menu[pack_ext]:
             choice(pack_id, list_ids, pack_name)
