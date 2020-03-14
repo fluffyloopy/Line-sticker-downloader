@@ -30,10 +30,7 @@ When you open the program, you will be prompted
 
 Enter the ID you found from the previous step.
 
-You will be notified whether animated stickers are available, and prompted for your desired download.
-
-~~animated png files arent supported in many so you'd be better off not using unless it's in web browsers or you could use node-js. Animation png's include animated and popup stickers you download.~~
-Animated png files will be converted to gif but the original unusable animated png files would also be stored in the directory.
+Choose which option you want as download. If unsupported, the script will crash.
 
 # Download options
 png: static stickers only.
@@ -55,8 +52,8 @@ Anything else: exit the program without downloading.
 
 - [x] Next release: support animated "popup" stickers. Script only downloads static versions for now.
 
+- [x] Line store seems to have .apng files, an uncommon format. Should add option for that. (soon... if anyone asks me to do that)
+
 - [ ] Mix audio and animated on stickers.
 
 - [ ] Add a GUI to make program less offensive looking.
-
-- [ ] Line store seems to have .apng files, an uncommon format. Should add option for that. (soon... if anyone asks me to do that)
