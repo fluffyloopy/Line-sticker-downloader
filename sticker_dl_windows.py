@@ -98,7 +98,7 @@ def validate_savepath(pack_name):
     return save_name
 
 def apng_to_gif(pack_id, list_ids, pack_name):
-    os.system('cd ' + 'Little Girl Animated' + '&&' + 'for %A IN (*.png) DO ffmpeg -i "%A" "%A.gif"' + '&' + 'del /q "%A"')
+    os.system('cd ' + str(pack_name) + '&&' + 'for %A IN (*.png) DO ffmpeg -i "%A" "%A.gif"' + '&' + 'del /q "%A"')
 
 def get_base_png(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
