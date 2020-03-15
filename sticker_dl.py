@@ -27,17 +27,17 @@ def main():
             if sys.version_info[0] < 3:
                 # https://stackoverflow.com/questions/31722883/python-nameerror-name-hello-is-not-defined
                 # compatibility python v2
-                pack_ext = raw_input("\nAnimated stickers available! \nEnter png, gif, audio or both for apng and audio, anything else to exit: ")
+                pack_ext = raw_input("\nAnimated stickers available! \nEnter png, gif or gifaudio(for audio stickers), anything else to exit: ")
             else:
-                pack_ext = input("\nAnimated stickers available! \nEnter png, gif, audio or both for apng and audio, anything else to exit: ")
+                pack_ext = input("\nAnimated stickers available! \nEnter png, gif or gifaudio(for audio stickers), anything else to exit: ")
 
         else:
             if sys.version_info[0] < 3:
                 # https://stackoverflow.com/questions/31722883/python-nameerror-name-hello-is-not-defined
                 # compatibility python v2
-                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), pngaudio(for audio stickers), gifaudio(for audio stickers with gif), anything else to exit: ")
+                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), pngaudio(for audio stickers), anything else to exit: ")
             else:
-                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), pngaudio(for audio stickers), gifaudio(for audio stickers with gif), anything else to exit: ")
+                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), pngaudio(for audio stickers), anything else to exit: ")
 
 
     id_string = """"id":"""
