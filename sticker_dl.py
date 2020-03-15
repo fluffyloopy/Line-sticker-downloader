@@ -35,9 +35,9 @@ def main():
             if sys.version_info[0] < 3:
                 # https://stackoverflow.com/questions/31722883/python-nameerror-name-hello-is-not-defined
                 # compatibility python v2
-                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), audio(for audio stickers), anything else to exit: ")
+                pack_ext = raw_input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), pngaudio(for audio stickers), gifaudio(for audio stickers with gif), anything else to exit: ")
             else:
-                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), audio(for audio stickers), anything else to exit: ")
+                pack_ext = input("\nOnly static stickers available! \npng to download sticker as is on the store, c to download caption stickers without the '****' on them(c doesnt work on non caption stickers) or popup to download popup stickers(popup doesnt work on non popup stickers), pngaudio(for audio stickers), gifaudio(for audio stickers with gif), anything else to exit: ")
 
 
     id_string = """"id":"""
@@ -52,7 +52,7 @@ def main():
     list_ids.pop()  # [4] Why pop
 
     # [3] A less ugly way of checking menu values
-    menu = {'gif': (get_gif,apng_to_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,apng_to_gif,), 'audio': (get_gif,get_audio,apng_to_gif)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
+    menu = {'gif': (get_gif,apng_to_gif,), 'png': (get_png,), 'c': (get_base_png,), 'popup': (get_popup,apng_to_gif,), 'pngaudio': (get_png,get_audio,), 'gifaudio': (get_gif,get_audio,apng_to_gif)}  # D'OH! Originally said tuples wouldn't work, which was strange. Thanks to doing MIT problems, I realized I used (var) instead of (var,). Former will not be considered a tuple.
     if pack_ext in menu:
         for choice in menu[pack_ext]:
             choice(pack_id, list_ids, pack_name)
@@ -128,7 +128,7 @@ def get_gif(pack_id, list_ids, pack_name):
             for chunk in image.iter_content(chunk_size = 10240):
                 if chunk:
                     f.write(chunk)
-                    
+
 def get_audio(pack_id, list_ids, pack_name):
     pack_name = validate_savepath(pack_name)
     for x in list_ids:
